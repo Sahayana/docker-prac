@@ -57,8 +57,15 @@
 
 
 
-##### 3-1-1 도커 이미지 세부 정보 조회
+##### 3-1-2 도커 이미지 세부 정보 조회
 
 
 
-**_ 구문: docker image inspect OPTIONS IMAGE _**
+- **docker image inspect OPTIONS IMAGE**: 다운로드한 이미지 세부 정보 조회
+- **docker image history OPTIONS IMAGE**: 현재 이미지 구성을 위해 사용된 레이블 정보 및 명령, 크기 조회
+
+
+##### 3-1-3 도커 이미지 태그 설정
+
+- **docker image inspect OPTIONS IMAGE**: 다운로드한 이미지 세부 정보 조회
+- **docker image history OPTIONS IMAGE**: 현재 이미지 구성을 위해 사용된 레이블 정보 및 명령, 크기 조회
