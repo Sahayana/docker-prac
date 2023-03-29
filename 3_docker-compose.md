@@ -33,3 +33,21 @@
     - 도커에서 생성한 기존 네트워크를 지정하는 경우 external 옵션에 네트워크 이름 작성</br>
 - **볼륨 정의**: 데이터 지속성을 유지하기 위해 최상위 레벨에 볼륨 정의, 서비스 레벨에서 볼륨명과 서비스 내부의 이렉터리 바인드
     - **docker volume ls** 명령을 통해 확인 가능
+
+#### 1-2. 도커 컴포즈 명령어 (docker-compose -help)
+
+ - **docker-compose up**: yaml 코드에 있는 이미지를 이용해 컨테이너 서비스 실행
+    - **-d, --detach**: 백그라운드로 컨테이너 서비스 실행
+    - **--build**: 컨테이너 서비스를 시작하기 전에 이미지 빌드
+    - **--force-recreate**: 컨테이너 무조건 재생성
+    - **-t, --timeout**: 컨테이너 종료시 타임아웃
+    - **--scale SERVICE=NUM**: 컨테이너 서비스의 개수를 지정한 만큼 확장
+ - **docker-compose down**: 정의된 서비스, 볼륨, 네트워크를 정지 후 삭제
+ - **docker-compose stop 서비스명**: 특정 컨테이너를 중지시킬 경우 사용
+ - **docker-compose start 서비스명**: 정지상태의 서비스 실행
+ - **docker-compose logs**: 화면에 어플리케이션 로그 출력, -f 옵션을 줄 경우 실시간 접근 로그 출력
+ - **docker-compose ps**: 도커 컴포즈에 정의된 모든 서비스 컨테이너 목록 조회
+ - **docker-compose config**: yaml파일 설정을 확인
+ - **docker-compose pause**: 컨테이너 일시 정지
+ - **docker-compose unpause**: 일시 정지 상태의 서비스 동작
+ - **docker-compose port 서비스명 포트**: 해당 컨테이너 서비스의 공개된 포트 정보 확인
