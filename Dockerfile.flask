@@ -7,6 +7,6 @@ WORKDIR .
 RUN pip install -r requirements.txt
 EXPOSE 8000
 
-SHELL ["/bin/cmd"]
-ENTRYPOINT ["/bin/cmd"]
+SHELL ["/bin/sh"]
+ENTRYPOINT ["/bin/sh"]
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app "]
