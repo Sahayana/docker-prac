@@ -10,6 +10,7 @@ aws-secretsmanager-caching = "*"
 flask-sqlalchemy = "*"
 pymysql = "*"
 boto3 = "*"
+gunicorn = "*"
 
 [dev-packages]
 
