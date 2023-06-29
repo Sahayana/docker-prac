@@ -1,6 +1,4 @@
 FROM python:3.7-alpine
-RUN apk update && apk add --no-cache bash
-RUN apk add --update build-base python3-dev py-pip
 COPY requirements.txt .
 COPY app.py .
 ENV LIBRARY_PATH = /lib:/usr/lib

@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 flask = "*"
 redis = "*"
+aws-secretsmanager-caching = "*"
+flask-sqlalchemy = "*"
+pymysql = "*"
+boto3 = "*"
 
 [dev-packages]
 
