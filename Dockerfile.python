@@ -12,4 +12,5 @@ RUN apt-get install -y python3.7
 WORKDIR /app
 COPY requirements.txt /app
 
-ENTRYPOINT ["python"]
+SHELL ["/bin/bash"]
+CMD ["/bin/bash"]
