@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-get update
 RUN apt-get install -y python3.7
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
 
 WORKDIR /app
 COPY requirements.txt /app
