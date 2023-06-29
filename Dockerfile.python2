@@ -3,6 +3,9 @@ MAINTAINER GEUMSEONG YANG  <sahayanayang@gmail.com>
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+WORKDIR /app
+COPY . /app/
+
 RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
@@ -10,14 +13,11 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get install -y python3.7 python3-pip python3.7-distutils pipenv
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-RUN pipenv lock -r > requirements.txt
 RUN python -m pip install -r requirements.txt
 
 ENV FLASK_APP=app
 ENV FLASK_DEBUG=development
 
-COPY app.py .
-WORKDIR .
 
 EXPOSE 8000
 
