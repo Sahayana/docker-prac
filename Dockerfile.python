@@ -1,0 +1,16 @@
+FROM ubuntu:20.04
+MAINTAINER GEUMSEONG YANG  <sahayanayang@gmail.com>
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update
+RUN apt-get install software-properties-common
+RUN apt install software-properties-common
+RUN apt-get update
+RUN apt-get install python3.7
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
+WORKDIR /app
+COPY requirements.txt /app
+
+CMD python --version
