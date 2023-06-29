@@ -15,9 +15,9 @@ RUN python -m pip install -r requirements.txt
 ENV FLASK_APP=app
 ENV FLASK_DEBUG=development
 
-WORKDIR /app
 COPY requirements.txt .
-COPY app.py /app
+COPY app.py .
+WORKDIR .
 
 EXPOSE 8000
 
