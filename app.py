@@ -21,5 +21,13 @@ app = Flask(__name__)
 #     '''.format(cnt)
 
 
+@app.route('/')
+def index():
+    return '''
+    <h1 style=color:deepskyblue;>docker-compose application</h1>
+    <p style=color:deepskyblue;>Hello from {}</p>
+     '''.format("EC2")
+
+
 if __name__ == "__main__":
     app.run()
