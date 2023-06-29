@@ -10,13 +10,13 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get install -y python3.7 python3-pip python3.7-distutils
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-RUN python -m pip install -r /app/requirements.txt
+RUN python -m pip install -r requirements.txt
 
 ENV FLASK_APP=app
 ENV FLASK_DEBUG=development
 
 WORKDIR /app
-COPY requirements.txt /app
+COPY requirements.txt .
 COPY app.py /app
 
 EXPOSE 8000
