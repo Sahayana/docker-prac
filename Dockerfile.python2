@@ -10,7 +10,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get install -y python3.7 python3-pip python3.7-distutils pipenv
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-RUN pipenv requirements > requirements.txt
+RUN pipenv lock -r > requirements.txt
 RUN python -m pip install -r requirements.txt
 
 ENV FLASK_APP=app
