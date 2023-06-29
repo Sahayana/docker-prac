@@ -9,4 +9,4 @@ EXPOSE 8000
 
 
 SHELL ["/bin/sh"]
-ENTRYPOINT ["/bin/sh"]
+CMD ["/bin/sh"]
