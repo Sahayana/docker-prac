@@ -9,9 +9,18 @@ RUN apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev li
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get install -y python3.7
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+RUN pip install -r requirements.txt
+
+ENV FLASK_APP=app
+ENV FLASK_DEBUG=development
 
 WORKDIR /app
 COPY requirements.txt /app
+COPY app.py /app
+
+EXPOSE 8000
 
 SHELL ["/bin/bash"]
-CMD ["/bin/bash"]
+
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app "]
