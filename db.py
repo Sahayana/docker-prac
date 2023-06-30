@@ -32,12 +32,6 @@ def get_secret():
     # Decrypts secret using the associated KMS key.
     secret = get_secret_value_response['SecretString']
 
-    env_file = '.env'
-
-    with open(env_file, "w") as f:
-            for key, value in secret.items():
-                f.write(f"{key}={value}\n")
-
     return json.loads(secret)
 
     # Your code goes here.
