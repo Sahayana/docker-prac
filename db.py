@@ -41,3 +41,9 @@ def get_secret():
     return json.loads(secret)
 
     # Your code goes here.
+
+
+secrets = get_secret()
+
+print("username", secrets["username"])
+print("password", secrets["password"])
