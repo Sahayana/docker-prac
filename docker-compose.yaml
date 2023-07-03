@@ -8,10 +8,13 @@ services:
   flask:
     build:
       context: .
-      dockerfile: Dockerfile.flask
+      dockerfile: Dockerfile.python2
     ports:
-      - 5000:5000
+      - 8000:8000
+    command: bash -c "gunicorn -b 0:80 app:app"
     depends_on:
       - redis
     restart: always
+    volumes:
+        - /home/ubuntu/.aws/credentials:/root/.aws/credentials
 
